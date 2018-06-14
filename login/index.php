@@ -82,7 +82,7 @@ include_once("../configuracion.php");
           <form action="login.php" method="post">
             <div class="form-group">
               <label class="form-label">Usuario</label>
-              <input type="text" class="form-control" name="usuario">
+              <input type="text" class="form-control" name="usuario" autofocus>
             </div>
             <div class="form-group">
               <label class="form-label d-flex justify-content-between align-items-end">
