@@ -6,4 +6,5 @@ $Internet=0; //¿Donde se Encuentra su Sistema?
 			// 1 en Internet
 			// 3 Solamente en LOCAL no Internet(Red de Area Local) 
 $TituloSistema="Sistema de Inventario, Compras y Ventas";
+$InicialesSistema="SINCOVE";
 ?>
