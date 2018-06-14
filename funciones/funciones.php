@@ -142,7 +142,7 @@ function listadotabla($titulo,$datos,$enlaces=0,$ver="",$modifica="",$elimina=""
     echo "</pre>";*/
 	?>
     <div class="table-responsive">
-	<table class="table table-striped table-bordered table-hover">
+	<table class="table table-striped table-bordered table-hover table-condensed table-sm">
 	<thead>
 	<tr>
 	<th width="50">Nº</th>
