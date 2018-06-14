@@ -39,7 +39,7 @@
                 ?>
                <li class="sidenav-item ">
             <a href="<?=$folder?>" class="sidenav-link sidenav-toggle">
-              <i class="sidenav-icon ion ion-md-<?php echo $m['Imagen']?>"></i>
+              <i class="sidenav-icon ion ion-<?php echo $m['Imagen']?>"></i>
               <div><?php echo $m['Nombre']?></div>
             </a>
             <ul class="sidenav-menu">
