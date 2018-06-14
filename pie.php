@@ -41,7 +41,9 @@
   <script src="<?=$folder;?>js/core/chartjs/chartjs.js"></script>
   <!-- Demo -->
   <script src="<?=$folder;?>js/core/demo.js"></script>
-  <script src="<?=$folder;?>js/core/dashboards_dashboard-1.js"></script>
+
+  <script src="<?=$folder;?>js/core/jquery.form.js"></script>
+  <script src="<?=$folder;?>js/core/cargadortotal.js"></script>
 
 </body>
 
