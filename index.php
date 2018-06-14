@@ -214,6 +214,6 @@ $Subtitulo="";
                 </div>
 
               </div>
-
+  <script src="<?=$folder;?>js/core/dashboards_dashboard-1.js"></script>
               <!-- / Charts -->
 <?php require_once($folder."pie.php")?>
