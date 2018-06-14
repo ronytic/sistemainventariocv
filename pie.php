@@ -38,9 +38,10 @@
 
   <!-- Libs -->
   <script src="<?=$folder;?>js/core/perfect-scrollbar/perfect-scrollbar.js"></script>
-
+  <script src="<?=$folder;?>js/core/chartjs/chartjs.js"></script>
   <!-- Demo -->
   <script src="<?=$folder;?>js/core/demo.js"></script>
+  <script src="<?=$folder;?>js/core/dashboards_dashboard-1.js"></script>
 
 </body>
 
