@@ -72,7 +72,7 @@ include_once("../../cabecerahtml.php");
                          <td>
                            <div class="form-group">
                             <label class="form-label">Precio Compra</label>
-                            <input type="number" class="form-control" placeholder="" name="preciominimo" min="0" step="0.1" value="<?=$a['preciominimo']?>">
+                            <input type="number" class="form-control" placeholder="" name="preciocompra" min="0" step="0.1" value="<?=$a['preciocompra']?>">
                           </div>
                          </td>
                          <td>

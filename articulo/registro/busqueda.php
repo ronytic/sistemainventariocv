@@ -21,7 +21,7 @@ foreach($art as $a){
     $datos[$i]['codarticulo']=$a['codarticulo'];
     $datos[$i]['codigointerno']=$a['codigointerno'];
     $datos[$i]['nombre']=$a['nombre'];
-    $datos[$i]['preciominimo']=$a['preciominimo'];
+    $datos[$i]['preciocompra']=$a['preciocompra'];
     $datos[$i]['precioventa']=$a['precioventa'];
     $datos[$i]['stockminimo']=$a['stockminimo'];
     $datos[$i]['stockmaximo']=$a['stockmaximo'];
@@ -33,5 +33,5 @@ foreach($art as $a){
     $datos[$i]['grupo']=$g['nombre'];
     $datos[$i]['unidad']=$u['nombre'];
 }
-listadotabla(array("codigointerno"=>"Cod Int.","nombre"=>"Nombre","grupo"=>"Grupo","unidad"=>"Unidad","preciominimo"=>"Precio Min","precioventa"=>"Precio  Ven","stockminimo"=>"Stock Min","stockmaximo"=>"Stock Max"),$datos,1,"","modificar.php","eliminar.php");
+listadotabla(array("codigointerno"=>"Cod Int.","nombre"=>"Nombre","grupo"=>"Grupo","unidad"=>"Unidad","preciocompra"=>"Precio Compra","precioventa"=>"Precio  Ven","stockminimo"=>"Stock Min","stockmaximo"=>"Stock Max"),$datos,1,"","modificar.php","eliminar.php");
 ?>

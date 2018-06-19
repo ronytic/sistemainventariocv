@@ -11,7 +11,6 @@ $uni=$unidad->mostrarTodoRegistro("",1,"nombre");
 $titulo="Registro de Articulo";
 ?>
 <?php require_once($folder."cabecerahtml.php")?>
-  <script src="<?=$folder;?>js/core/dashboards_dashboard-1.js"></script>
 <?php require_once($folder."cabecera.php")?>
 
                 <form action="guardar.php" method="post">
@@ -64,7 +63,7 @@ $titulo="Registro de Articulo";
                          <td>
                            <div class="form-group">
                             <label class="form-label">Precio Compra</label>
-                            <input type="number" class="form-control" placeholder="" name="preciominimo" min="0" step="0.1">
+                            <input type="number" class="form-control" placeholder="" name="preciocompra" min="0" step="0.1">
                           </div>
                          </td>
                          <td>
