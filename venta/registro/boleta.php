@@ -2,7 +2,7 @@
 include_once("../../login/check.php");
 $folder="../../";
 $codventa=$_GET['codventa'];
-$url="reporte.php?codventa=".$codventa;
+$url="reporte.php?Cod=".$codventa;
 
 $titulo="Reporte de Venta";
 ?>
