@@ -22,6 +22,7 @@ include_once("../../cabecerahtml.php");
                             </select></td>
             <td class="text-center">Fecha de Venta<input type="date" name="fechaventa" class="form-control"></td>
             <td class="text-center">Tipo de Venta<select name="tipoventa" id="" class="form-control">
+                                  <option value="%">Todos</option>
                                    <option value="contado">Contado</option>
                                    <option value="credito">Credito</option>
                                </select></td>

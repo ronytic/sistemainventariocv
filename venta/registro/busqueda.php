@@ -34,5 +34,5 @@ foreach($ven as $a){
     $datos[$i]['cliente']=$p['nombre'];
 
 }
-listadotabla(array("cliente"=>"Cliente","fechaventa"=>"Fecha de  Venta","total"=>"Total","tipoventa"=>"Tipo Venta","fechacancelacion"=>"Fecha Cancelación"),$datos,1,"","","");
+listadotabla(array("cliente"=>"Cliente","fechaventa"=>"Fecha de  Venta","total"=>"Total","tipoventa"=>"Tipo Venta","fechacancelacion"=>"Fecha Cancelación"),$datos,1,"boleta.php","","");
 ?>
