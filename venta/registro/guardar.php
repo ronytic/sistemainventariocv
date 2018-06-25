@@ -16,7 +16,7 @@ $valores=array("codcliente"=>"'$codcliente'",
                "fechacancelacion"=>"'$fechacancelacion'",
               
             );
-//$venta->insertarRegistro($valores);
+$venta->insertarRegistro($valores);
 $codventa=$venta->ultimo();
 foreach($c as $pr){
     extract($pr);
@@ -29,7 +29,7 @@ foreach($c as $pr){
                "subtotal"=>"'$subtotal'",
               
             );
-//    $ventadetalle->insertarRegistro($valores);
+    $ventadetalle->insertarRegistro($valores);
 }
 
 include_once("../../class/cobrar.php");
@@ -45,8 +45,8 @@ $valores=array("codcliente"=>"'$codcliente'",
                "estado"=>"'Pendiente'",
                "detalle"=>"'Venta Directa - $observacion'",
             );
- //   $cobrar->insertarRegistro($valores);
-$codventa=3;
+    $cobrar->insertarRegistro($valores);
+//$codventa=3;
 //print_r($valores);
 $titulo="Mensaje de Confirmación";
 $folder="../../";
