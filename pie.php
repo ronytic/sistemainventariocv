@@ -24,7 +24,7 @@
       </div>
       <!-- / Layout container -->
 
-    </div>r
+    </div>
 
     <!-- Overlay -->
     <div class="layout-overlay layout-sidenav-toggle"></div>
@@ -47,7 +47,4 @@
   <script src="<?=$folder;?>js/core/cargadortotal.js"></script>
 
 </body>
-
-
-<!-- Mirrored from uxpowered.com/products/appwork/v100/html-demo/forms_layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Jun 2018 14:54:22 GMT -->
 </html>
