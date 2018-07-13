@@ -1,113 +1,78 @@
 <?php
 include_once("../../login/check.php");
-extract($_GET);
-if($fechacompradesde!=""){
-    
+$folder="../../";
+$titulo="Reporte Detallado de Compra de Articulo";
 
-    $fecha="fechacompra BETWEEN '$fechacompradesde' and '$fechacomprahasta'";
-}else{
-    $fechacompradesde=$fechacompradesde!=""?$fechacompradesde:'%';
-    $fechacomprahasta=$fechacomprahasta!=""?$fechacomprahasta:'%';
-    $fecha="fechacompra LIKE '%'";
-}
-$fechacancelacion=$fechacancelacion!=""?$fechacancelacion:'%';
-include_once("../../class/compra.php");
-$compra=new compra;
-$com=$compra->mostrarTodoRegistro("codproveedor LIKE '$codproveedor' and tipocompra LIKE '$tipocompra' and fechacancelacion LIKE '$fechacancelacion' and $fecha",1,"");
-
-//print_r($com);
+$codcompra=$_GET['codcompra'];
 include_once("../../class/proveedor.php");
 $proveedor=new proveedor;
+include_once("../../class/compra.php");
+$compra=new compra;
+include_once("../../class/compradetalle.php");
+$compradetalle=new compradetalle;
+include_once("../../class/articulo.php");
+$articulo=new articulo;
+$pro=$proveedor->mostrarTodoRegistro("",1,"nombre");
 
-/*
-include_once("../../class/unidad.php");
-$unidad=new unidad;
-
-
-include_once("../../class/tipo.php");
-$tipo=new tipo;
-
-
-include_once("../../class/subtipo.php");
-$subtipo=new subtipo;
-
-include_once("../../class/material.php");
-$material=new material;
-
-include_once("../../class/almacen.php");
-$almacen=new almacen;
-
-include_once("../../class/cliente.php");
-$cliente=new cliente;
-*/
-
-include_once("../../impresion/pdf.php");
-$titulo="Reporte de Compra de Articulos";
-class PDF extends PPDF{
-    function Cabecera(){
-
-        $this->TituloCabecera(8,"N");
-        $this->TituloCabecera(40,"Proveedor");
-        $this->TituloCabecera(35,"Fecha de Compra");
-        $this->TituloCabecera(25,"Total");
-        $this->TituloCabecera(30,"Tipo de Compra");
-        $this->TituloCabecera(35,"Fecha Cancelación");
-        
-    }
-}
-
-$pdf=new PDF("P","mm","letter");
-$pdf->Addpage();
-$i=0;
-$total=0;
-$datos=array();
-foreach($com as $c){
-    
-    /*$m=$material->mostrarTodoRegistro("codmaterial=".$in['codmaterial'],1,"nombre");
-    $m=array_shift($m);
-    $pro=$proveedor->mostrarTodoRegistro("codproveedor=".$in['codproveedor'],1,"nombre");
-    $p=array_shift($pro);
-    $uni=$unidad->mostrarTodoRegistro("codunidad=".$m['codunidad'],1,"nombre");
-    $u=array_shift($uni);
-    $tip=$tipo->mostrarTodoRegistro("codtipo=".$in['codtipo'],1,"nombre");
-    $t=array_shift($tip);
-    $stipo=$subtipo->mostrarTodoRegistro("codsubtipo=".$in['codsubtipo'],1,"nombre");
-    $st=array_shift($stipo);
-    
-    
-    
-    $cli=$cliente->mostrarTodoRegistro("codcliente=".$in['codcliente'],1,"nombre");
-    $cli=array_shift($cli);
-    */
-    $pro=$proveedor->mostrarTodoRegistro("codproveedor=".$c['codproveedor'],1,"nombre");
-    $pro=array_shift($pro);
-    
-    $i++;
-    $datos[$i]['codingreso']=$in['codingreso'];
-    
-
-    $total=$total+$c['total'];
-    
-    
-    $pdf->CuadroCuerpo(8 ,$i,0,"R");
-    $pdf->CuadroCuerpo(40,$pro['nombre']);
-    
-    $pdf->CuadroCuerpo(35,$c['fechacompra']);
-    $pdf->CuadroCuerpo(25,number_format($c['total'],2,".",""),0,"R");
-    $pdf->CuadroCuerpo(30,$c['tipocompra']);
-    $pdf->CuadroCuerpo(35,$c['fechacancelacion']);
-   
-    $pdf->ln();
-}
-$pdf->CuadroCuerpo(83,"Total",1,"R",1,"","B");
-$pdf->CuadroCuerpo(25,number_format($total,2,".",""),1,"R",1,"","B");
-
-$i++;
-$datos[$i]['codingreso']=0;
-$datos[$i]['stockanterior']="Total";
-$datos[$i]['cantidad']=$total;
+$c=$compra->mostrarTodoRegistro("codcompra LIKE '$codcompra' ",1,"");
+$c=array_shift($c);
 
 
-$pdf->Output();
+$comd=$compradetalle->mostrarTodoRegistro("codcompra LIKE '$codcompra' ",1,"");
 
+
+
+$p=$proveedor->mostrarRegistro($c['codproveedor']);
+$p=array_shift($p);
+
+include_once("../../cabecerahtml.php");
 ?>
+<?php include_once("../../cabecera.php");?>
+<a href="#" class="btn btn-success btn-xs exportarexcel">Exportar tabla a excel</a>
+<table class="table table-bordered">
+  <thead>
+   <tr>
+            <th colspan="6" class="text-center"><?=$titulo?></th>
+
+   </tr>
+   <tr>
+
+            <th>Proveedor</th>
+            <th>Fecha de Compra</th>
+            <th>Total</th>
+            <th>Tipo de Compra</th>
+            <th>Fecha Cancelacion</th>
+   </tr>
+   </thead>
+    <tr>
+            <td><?=$p['nombre']?></td>
+            <td><?=$c['fechacompra']?></td>
+            <td><?=number_format($c['total'],2,".","")?></td>
+            <td><?=$c['tipocompra']?></td>
+            <td><?=$c['fechacancelacion']?></td>
+    </tr>
+    <tr height="50"><td colspan="5"></td></tr>
+    <tr>
+        <th>Nº</th>
+       <th>Codigo</th>
+       <th>Cantidad</th>
+       <th>Precio</th>
+       <th>SubTotal</th>
+    </tr>
+    <?php 
+    $i=0;
+    foreach($comd as $cd){$i++;
+    $a=$articulo->mostrarRegistro($cd['codarticulo']);
+    $a=array_shift($a);
+    ?>
+    <tr>
+       <td><?=$i?></td>
+       <td><?=$a['codigointerno']?>-<?=$a['nombre']?></td>
+       <td><?=$cd['cantidad']?></td>
+       <td><?=$cd['precio']?></td>
+       <td><?=$cd['subtotal']?></td>
+    </tr>
+    <?php }?>
+</table>
+
+<?php include_once("../../pie.php");?>
