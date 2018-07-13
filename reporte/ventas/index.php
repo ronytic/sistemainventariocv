@@ -11,7 +11,7 @@ include_once("../../cabecerahtml.php");
     <form action="busqueda.php" method="post" class="formulariobusqueda" data-respuesta="respuestaformulario">
     <table class="table table-bordered table-hover">
         <tr>
-            <td class="text-center text-bold"><label class="form-label">Grupo </label>
+            <td class="text-center text-bold"><label class="form-label">Cliente </label>
                             <select name="codcliente" class="form-control">
                                <option value="%">Todos</option>
                                 <?php foreach($cli as $d){
