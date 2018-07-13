@@ -24,6 +24,8 @@ foreach($ven as $a){
     $datos[$i]['codventa']=$a['codventa'];
     $datos[$i]['fechaventa']=$a['fechaventa'];
     $datos[$i]['total']=$a['total'];
+    $datos[$i]['cancelado']=$a['cancelado'];
+    $datos[$i]['cambio']=$a['cambio'];
     $datos[$i]['tipoventa']=$a['tipoventa'];
     $datos[$i]['fechacancelacion']=$a['fechacancelacion'];
     
@@ -31,8 +33,9 @@ foreach($ven as $a){
     $p=array_shift($p);
     
 
-    $datos[$i]['cliente']=$p['nombre'];
+    $datos[$i]['cliente']=$p['nombre']." ".$p['apellido'];
 
 }
-listadotabla(array("cliente"=>"Cliente","fechaventa"=>"Fecha de  Venta","total"=>"Total","tipoventa"=>"Tipo Venta","fechacancelacion"=>"Fecha Cancelación"),$datos,1,"boleta.php","","");
+//print_r($datos);
+listadotabla(array("cliente"=>"Cliente","fechaventa"=>"Fecha de  Venta","total"=>"Total","cancelado"=>"Cancelado","cambio"=>"Cambio","tipoventa"=>"Tipo Venta","fechacancelacion"=>"Fecha Cancelación"),$datos,1,"boleta.php","","");
 ?>

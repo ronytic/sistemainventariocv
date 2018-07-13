@@ -52,7 +52,7 @@ $titulo="Mensaje de Confirmación";
 $folder="../../";
 $nuevo=1;
 $listar=1;
-$botones=array("Boleta de Venta"=>array("boleta.php?codventa=$codventa","danger"));
+$botones=array("Boleta de Venta"=>array("boleta.php?Cod=$codventa","danger"));
 $mensajes[]="Sus datos fueron guardados correctamente.";
 include_once("../../respuesta.php");
 ?>
