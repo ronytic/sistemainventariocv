@@ -254,8 +254,8 @@
               <span class="text-muted font-weight-light"></span> <?=$titulo?>
             </h4>
 
-            <div class="card mb-4">
+            <div class="card mb-4 cuerpocontenido">
               <h6 class="card-header">
                 <?=$Subtitulo?>
               </h6>
-              <div class="card-body">
+              <div class="card-body ">
