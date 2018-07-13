@@ -52,6 +52,7 @@ $(document).ready(function(){
                                      e.preventDefault();
        $.post("fila.php",{"f":l},function(data){
           $("#marca").before(data); 
+           $('select').select2();
        });
     }).click();
 });
