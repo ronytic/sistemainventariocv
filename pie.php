@@ -41,7 +41,8 @@
   <script src="<?=$folder;?>js/core/chartjs/chartjs.js"></script>
   <!-- Demo -->
   <script src="<?=$folder;?>js/core/demo.js"></script>
-
+  <script src="<?=$folder;?>js/core/select2/select2.js"></script>
+  <link href="<?=$folder;?>js/core/select2/select2.css" type="text/css" rel="stylesheet">
   <script src="<?=$folder;?>js/core/jquery.form.js"></script>
   <script src="<?=$folder;?>js/core/cargadortotal.js"></script>
 
