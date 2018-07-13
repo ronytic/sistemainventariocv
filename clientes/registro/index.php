@@ -80,8 +80,15 @@ $titulo="Registro de Cliente";
                           </div>
                          </td>
                          <td>
-                         
-                        </td>
+                           <div class="form-group">
+                            <label class="form-label">Tipo Pedido</label>
+                            <select name="tipopedido" id="" class="form-control">
+                               
+                                   <option value="CONTADO">Contado</option>
+                                   <option value="CREDITO">Credito</option>
+                               </select>
+                          </div>
+                         </td>
                      </tr>
                      <tr class="table-danger">
                          <td>

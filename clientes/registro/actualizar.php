@@ -16,6 +16,7 @@ $valores=array("nombre"=>"'$nombre'",
                "totaldeuda"=>"'$totaldeuda'",
                "fechapagar"=>"'$fechapagar'",
                "memo"=>"'$memo'",
+               "tipopedido"=>"'$tipopedido'",
                
             );
 

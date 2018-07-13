@@ -87,8 +87,15 @@ $vendedores=$usuario2->mostrarTodoRegistro("nivel=4",1,"Paterno,Materno,Nombres"
                           </div>
                          </td>
                          <td>
-                         
-                        </td>
+                           <div class="form-group">
+                            <label class="form-label">Tipo Pedido</label>
+                            <select name="tipopedido" id="" class="form-control">
+                               
+                                   <option value="CONTADO" <?=$cli['tipopedido']=='CONTADO'?'selected="selected"':''?> >Contado</option>
+                                   <option value="CREDITO" <?=$cli['tipopedido']=='CREDITO'?'selected="selected"':''?>>Credito</option>
+                               </select>
+                          </div>
+                         </td>
                      </tr>
                      <tr class="table-danger">
                          <td>
