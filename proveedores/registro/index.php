@@ -44,6 +44,21 @@ $titulo="Registro de Proveedor";
                      </tr>
                      <tr>
                          <td>
+                           <div class="form-group">
+                            <label class="form-label">Tipo Pedido</label>
+                            <select name="tipopedido" id="" class="form-control">
+                               
+                                   <option value="CONTADO">Contado</option>
+                                   <option value="CREDITO">Credito</option>
+                               </select>
+                          </div>
+                         </td>
+                         <td>
+                         
+                        </td>
+                     </tr>
+                     <tr>
+                         <td>
                             <div class="form-group">
                                 <label class="form-label">Persona Contacto</label>
                                 <input type="text" class="form-control" placeholder="" name="contacto">

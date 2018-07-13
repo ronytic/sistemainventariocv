@@ -48,6 +48,21 @@ include_once("../../cabecerahtml.php");
                      </tr>
                      <tr>
                          <td>
+                           <div class="form-group">
+                            <label class="form-label">Tipo Pedido</label>
+                            <select name="tipopedido" id="" class="form-control">
+                               
+                                   <option value="CONTADO" <?=$pro['tipopedido']=='CONTADO'?'selected="selected"':''?> >Contado</option>
+                                   <option value="CREDITO" <?=$pro['tipopedido']=='CREDITO'?'selected="selected"':''?>>Credito</option>
+                               </select>
+                          </div>
+                         </td>
+                         <td>
+                         
+                        </td>
+                     </tr>
+                     <tr>
+                         <td>
                             <div class="form-group">
                                 <label class="form-label">Persona Contacto</label>
                                 <input type="text" class="form-control" placeholder="" name="contacto" value="<?=$pro['contacto']?>">

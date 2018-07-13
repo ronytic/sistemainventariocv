@@ -9,6 +9,8 @@ $valores=array("nombre"=>"'$nombre'",
                "fax"=>"'$fax'",
                "contacto"=>"'$contacto'",
                "telefonos"=>"'$telefonos'",
+               "tipopedido"=>"'$tipopedido'",
+               
                "memo"=>"'$memo'",
               
                

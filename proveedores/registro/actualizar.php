@@ -11,7 +11,7 @@ $valores=array("nombre"=>"'$nombre'",
                "contacto"=>"'$contacto'",
                "telefonos"=>"'$telefonos'",
                "memo"=>"'$memo'",
-              
+              "tipopedido"=>"'$tipopedido'",
                
             );
 
