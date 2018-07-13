@@ -9,3 +9,10 @@
 .cuerpocontenido table{
     background-color: rgba(255,255,255,0.20);
 }
+.select2-container.select2-container--default.select2-container--open{
+    width: 100%;
+    background-color: aqua !important;
+}
+body{
+    overflow-x: hidden !important;
+}
