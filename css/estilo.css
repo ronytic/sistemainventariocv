@@ -1,0 +1,11 @@
+/* CSS Document */
+
+.container-fluid {
+     background-color: rgba(169,185,244,1.00);
+}
+.cuerpocontenido{
+    background-color: rgba(169,185,244,1.00) !important;
+}
+.cuerpocontenido table{
+    background-color: rgba(255,255,255,0.20);
+}
