@@ -57,23 +57,25 @@ $submenu=new submenu;
   <link rel="stylesheet" href="<?=$folder;?>css/rtl/colors.css" class="theme-settings-colors-css">
   <link rel="stylesheet" href="<?=$folder;?>css/rtl/uikit.css">
   <link rel="stylesheet" href="<?=$folder;?>css/demo.css">
+  <link rel="stylesheet" href="<?=$folder;?>css/estilo.css">
 
   <script src="<?=$folder;?>js/core/material-ripple.js"></script>
   <script src="<?=$folder;?>js/core/layout-helpers.js"></script>
-
+  <!-- Core scripts -->
+  <script src="<?=$folder;?>js/core/pace.js"></script>
+  <script src="<?=$folder;?>js/core/jquery.min.js"></script>
   <!-- Theme settings -->
   <!-- This file MUST be included after core stylesheets and layout-helpers.js in the <head> section -->
   <script src="<?=$folder;?>js/core/theme-settings.js"></script>
   <script>
-    window.themeSettings = new ThemeSettings({
-      cssPath: '/products/appwork/v100/assets_/vendor/css/rtl/',
-      themesPath: '/products/appwork/v100/assets_/vendor/css/rtl/'
-    });
+      var folder="<?=$folder;?>";
+    /*window.themeSettings = new ThemeSettings({
+      cssPath: folder+'css/rtl/',
+      themesPath: folder+'css/rtl/'
+    });*/
   </script>
 
-  <!-- Core scripts -->
-  <script src="<?=$folder;?>js/core/pace.js"></script>
-  <script src="<?=$folder;?>js/core/jquery.min.js"></script>
+
 
   <!-- Libs -->
   <link rel="stylesheet" href="<?=$folder;?>css/perfect-scrollbar/perfect-scrollbar.css">
