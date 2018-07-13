@@ -3,8 +3,10 @@ include_once("../../login/check.php");
 $folder="../../";
 $titulo="Registro de Cliente";
 ?>
-<?php require_once($folder."cabecerahtml.php")?>
-  <script src="<?=$folder;?>js/core/dashboards_dashboard-1.js"></script>
+<?php require_once($folder."cabecerahtml.php");
+ $vendedores=$usuario2->mostrarTodoRegistro("nivel=4",1,"Paterno,Materno,Nombres");?>
+
+
 <?php require_once($folder."cabecera.php")?>
 
                 <form action="guardar.php" method="post">
@@ -48,7 +50,11 @@ $titulo="Registro de Cliente";
                          <td>
                          <div class="form-group">
                             <label class="form-label">Vendedor</label>
-                            <input type="text" class="form-control" placeholder="" name="vendedor">
+                            <select name="codvendedor" class="form-control">
+                                <?php foreach($vendedores as $v){?>
+                                <option value="<?=$v['CodUsuario']?>" <?=$v['CodUsuario']==$cli['codvendedor']?'selected="selected"':''?>><?=$v['Paterno']?> <?=$v['Materno']?> <?=$v['Nombres']?></option>
+                                <?php }?>
+                            </select>
                           </div>
                         </td>
                      </tr>

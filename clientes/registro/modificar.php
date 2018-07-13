@@ -7,7 +7,10 @@ include_once("../../class/cliente.php");
 $cliente=new cliente;
 $cli=$cliente->mostrarRegistro($Cod);
 $cli=array_shift($cli);
+
+
 include_once("../../cabecerahtml.php");
+$vendedores=$usuario2->mostrarTodoRegistro("nivel=4",1,"Paterno,Materno,Nombres");
 ?>
 <?php include_once("../../cabecera.php");?>
 <div class="col-lg-12">
@@ -52,7 +55,13 @@ include_once("../../cabecerahtml.php");
                          <td>
                          <div class="form-group">
                             <label class="form-label">Vendedor</label>
-                            <input type="text" class="form-control" placeholder="" name="vendedor" value="<?=$cli['vendedor']?>">
+                            <select name="codvendedor" class="form-control">
+                                <?php foreach($vendedores as $v){?>
+                                <option value="<?=$v['CodUsuario']?>" <?=$v['CodUsuario']==$cli['codvendedor']?'selected="selected"':''?>><?=$v['Paterno']?> <?=$v['Materno']?> <?=$v['Nombres']?></option>
+                                <?php }?>
+                            </select>
+                            
+                            
                           </div>
                         </td>
                      </tr>
