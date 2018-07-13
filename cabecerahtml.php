@@ -66,7 +66,7 @@ $submenu=new submenu;
   <script src="<?=$folder;?>js/core/jquery.min.js"></script>
   <!-- Theme settings -->
   <!-- This file MUST be included after core stylesheets and layout-helpers.js in the <head> section -->
-  <script src="<?=$folder;?>js/core/theme-settings.js"></script>
+  <!--<script src="<?=$folder;?>js/core/theme-settings.js"></script>-->
   <script>
       var folder="<?=$folder;?>";
     /*window.themeSettings = new ThemeSettings({
