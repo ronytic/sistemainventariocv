@@ -15,12 +15,13 @@ $art=$articulo->mostrarTodoRegistro("",1,"nombre");
                                <option value="">Seleccionar</option>
                                 <?php foreach($art as $d){
                                 ?>
-                                <option value="<?php echo $d['codgrupo']?>"><?=$d['codigointerno']?> - <?=$d['nombre']?></option>
+                                <option value="<?php echo $d['codarticulo']?>"><?=$d['codigointerno']?> - <?=$d['nombre']?></option>
                                <?php
                                 }?>
                             </select></td>
-    <td>
+    <td class="contenedorstock">
         <input type="number" name="c[<?=$f;?>][cantidad]" class="form-control cantidad text-right" rel="<?=$f?>" min="0">
+        <span class="badge badge-success stock"  rel="<?=$f?>">0</span><span class="badge badge-success unidad"  rel="<?=$f?>"></span>
         
     </td>
     <td>

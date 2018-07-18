@@ -30,7 +30,8 @@ $(document).ready(function(){
 
             $(".canti[rel="+fila+"]").html(data.stock)
             $(".precio[rel="+fila+"]").val(data.preciocompra)
-            
+            $(".stock[rel="+fila+"]").html(data.stock)
+            $(".unidad[rel="+fila+"]").html(data.unidad)
         },"json");
     });
      $(document).on("keyup change",".cantidad",function(){
@@ -65,7 +66,21 @@ function sumarTodo(){
     $("#total").val(tt.toFixed(2));
 }
 </script>
-  
+  <style type="text/css">
+    .contenedorstock{
+        position: relative;
+    }
+    .stock{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .unidad{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+</style>
 <?php require_once($folder."cabecera.php")?>
 
                 <form action="guardar.php" method="post">
@@ -97,10 +112,10 @@ function sumarTodo(){
                        <thead>
                            <tr>
                                <th width="15">Nº</th>
-                               <th width="200">Codigo</th>
-                               <th>Cantidad</th>
-                               <th>Precio</th>
-                               <th>SubTotal</th>
+                               <th>Codigo</th>
+                               <th width="150">Cantidad</th>
+                               <th width="150">Precio</th>
+                               <th width="150">SubTotal</th>
                                <!--<th width="150">Fecha Vencimiento</th>-->
                            </tr>
                        </thead>
@@ -114,11 +129,11 @@ function sumarTodo(){
                                    <input type="number" name="total" value="" min="0" readonly class="form-control total text-right" id="total">
                                    
                                </th>
-                                <th></th>
+                                
                            </tr>
                            <tr>
                                
-                               <th colspan="3">
+                               <th colspan="2">
                                </th>
                                <th>
                                    Tipo de Compra  <select name="tipocompra" id="" class="form-control">
@@ -126,7 +141,7 @@ function sumarTodo(){
                                    <option value="credito">Credito</option>
                                </select>
                                </th>
-                               <th>Fecha de Cancelación  <input type="date" name="fechacancelacion" value="" class="form-control">
+                               <th colspan="2">Fecha de Cancelación  <input type="date" name="fechacancelacion" value="" class="form-control">
                                </th>
                            </tr>
                        </tfoot>
