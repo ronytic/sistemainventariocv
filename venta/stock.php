@@ -17,7 +17,19 @@ $vd=array_shift($vd);
 $CompraTotal=$cd['CompraTotal'];
 $VentaTotal=$vd['VentaTotal'];
 
-$stock=$CompraTotal-$VentaTotal;
+    
+    
+include_once("../../class/traspaso.php");
+$traspaso=new traspaso;
+$ts=$traspaso->cantidadSalida($codarticulo);
+$ts=array_shift($ts);   
+$te=$traspaso->cantidadEntrada($codarticulo);
+$te=array_shift($te);   
+    
+$TrasSalida=$ts['CantidadSalida'];
+    $TrasEntrada=$te['CantidadEntrada'];
+    
+    $stock=$CompraTotal-$VentaTotal-$TrasSalida+$TrasEntrada;
     return $stock;
 }
 ?>
