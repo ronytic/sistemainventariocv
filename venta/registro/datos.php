@@ -6,28 +6,16 @@ $art=$articulo->mostrarRegistro($codarticulo);
 $art=array_shift($art);
 
 
-include_once("../../class/compradetalle.php");
-$compradetalle=new compradetalle;
-$cd=$compradetalle->cantidadCompras($codarticulo);
-//print_r($cd);
-$cd=array_shift($cd);
+include_once("../../class/unidad.php");
+$unidad=new unidad;
+$uni=$unidad->mostrarRegistro($art['codunidad']);
+$uni=array_shift($uni);
 
-$CompraTotal=$cd['CompraTotal'];
-
-
-
-include_once("../../class/ventadetalle.php");
-$ventadetalle=new ventadetalle;
-$vd=$ventadetalle->cantidadVentas($codarticulo);
-//print_r($cd);
-$vd=array_shift($vd);
-
-$CompraTotal=$cd['CompraTotal'];
-$VentaTotal=$vd['VentaTotal'];
-
-$stock=$CompraTotal-$VentaTotal;
+include_once("../stock.php");
+$stock=ObtenerStock($codarticulo);
 
 $datos=array("precioventa"=>number_format($art['precioventa'],2,".",""),
-            "stock"=>$stock);
+            "stock"=>$stock,
+            "unidad"=>$uni['nombre']);
 echo json_encode($datos);
 ?>

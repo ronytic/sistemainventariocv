@@ -31,6 +31,7 @@ $(document).ready(function(){
             $(".cantidad[rel="+fila+"]").attr("max",data.stock)
             $(".precio[rel="+fila+"]").val(data.precioventa)
             $(".stock[rel="+fila+"]").html(data.stock)
+            $(".unidad[rel="+fila+"]").html(data.unidad)
         },"json");
     });
      $(document).on("keyup change",".cantidad,.descuento",function(){
@@ -79,6 +80,11 @@ function sumarTodo(){
     .stock{
         position: absolute;
         top: 0px;
+        left: 0px;
+    }
+    .unidad{
+        position: absolute;
+        top: 0px;
         right: 0px;
     }
 </style>
@@ -117,7 +123,7 @@ function sumarTodo(){
                                <th width="100">Cantidad</th>
                                <th width="120">Precio</th>
                                <th width="120">Descuento</th>
-                               <th width="120">SubTotal</th>
+                               <th width="50" style="width: 100px !important;">SubTotal</th>
                                <!--<th width="150">Fecha Vencimiento</th>-->
                            </tr>
                        </thead>
@@ -131,7 +137,7 @@ function sumarTodo(){
                                    <input type="number" name="total" value="" min="0" readonly class="form-control total text-right" id="total">
                                    
                                </th>
-                                <th></th>
+                                
                            </tr>
                            <tr class="table-success">
                                <th colspan="4">
@@ -142,7 +148,7 @@ function sumarTodo(){
                                    <input type="number" name="cancelado" value="" min="0"  class="form-control total text-right" id="cancelado">
                                    
                                </th>
-                                <th></th>
+                                
                            </tr>
                            <tr class="table-success">
                                <th colspan="4">
@@ -153,11 +159,11 @@ function sumarTodo(){
                                    <input type="number" name="cambio" value="" min="0" readonly class="form-control total text-right" id="cambio">
                                    
                                </th>
-                                <th></th>
+                                
                            </tr>
                            <tr>
                                
-                               <th colspan="4">
+                               <th colspan="3">
                                Observación
                                <textarea class="form-control" name="observacion"></textarea>
                                </th>
@@ -167,7 +173,7 @@ function sumarTodo(){
                                    <option value="credito">Credito</option>
                                </select>
                                </th>
-                               <th>Fecha de Cancelación  <input type="date" name="fechacancelacion" value="" class="form-control">
+                               <th colspan="2">Fecha de Cancelación  <input type="date" name="fechacancelacion" value="" class="form-control">
                                </th>
                            </tr>
                        </tfoot>
