@@ -63,13 +63,13 @@ $titulo="Registro de Articulo";
                          <td>
                            <div class="form-group">
                             <label class="form-label">Precio Compra</label>
-                            <input type="number" class="form-control" placeholder="" name="preciocompra" min="0" step="0.1">
+                            <input type="number" class="form-control" placeholder="" name="preciocompra" min="0" step="0.01">
                           </div>
                          </td>
                          <td>
                          <div class="form-group">
                             <label class="form-label">Precio Venta</label>
-                            <input type="text" class="form-control" placeholder="" name="precioventa" min="0" step="0.1">
+                            <input type="text" class="form-control" placeholder="" name="precioventa" min="0" step="0.01">
                           </div>
                         </td>
                      </tr>
