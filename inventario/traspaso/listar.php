@@ -13,6 +13,7 @@ include_once("../../cabecerahtml.php");
 ?>
 <?php include_once("../../cabecera.php");?>
     <form action="busqueda.php" method="post" class="formulariobusqueda" data-respuesta="respuestaformulario">
+    <div class="table-responsive">
     <table class="table table-bordered table-hover">
         <tr>
             <td class="text-center">Fecha de Traspaso<input type="date" name="fechatraspaso" class="form-control"></td>
@@ -35,6 +36,7 @@ include_once("../../cabecerahtml.php");
             <td><br><input type="submit" value="Buscar" class="btn btn-info"></td>
         </tr>
     </table>
+        </div>
     </form>
     </div>
 </div>
