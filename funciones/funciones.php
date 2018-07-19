@@ -142,6 +142,7 @@ function listadotabla($titulo,$datos,$enlaces=0,$ver="",$modifica="",$elimina=""
     echo "</pre>";*/
 	?>
     <div class="table-responsive">
+    <a href="#" class="btn btn-success btn-xs exportarexcel">Exportar tabla a excel</a>
 	<table class="table table-striped table-bordered table-hover table-condensed table-sm">
 	<thead>
 	<tr>
