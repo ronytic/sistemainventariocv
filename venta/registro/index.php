@@ -3,7 +3,18 @@ include_once("../../login/check.php");
 $folder="../../";
 include_once("../../class/cliente.php");
 $cliente=new cliente;
-$cli=$cliente->mostrarTodoRegistro("",1,"nombre");
+
+$codusuariolog=$_SESSION['CodUsuarioLog'];
+$nivelusuariolog=$_SESSION['Nivel'];
+
+if( in_array($nivelusuariolog,array(1,2,3)))
+{
+    //echo "si";
+  $condicion="";  
+}else{
+$condicion="codvendedor=$codusuariolog";
+    }
+$cli=$cliente->mostrarTodoRegistro("$condicion",1,"nombre");
 
 
 $titulo="Registro de Venta de Articulos";
