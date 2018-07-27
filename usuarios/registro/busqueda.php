@@ -30,8 +30,9 @@ foreach($us as $u){
     $datos[$i]['Paterno']=$u['Paterno'];
     $datos[$i]['Materno']=$u['Materno'];
     $datos[$i]['Nombres']=$u['Nombres'];
+    $datos[$i]['Usuario']=$u['Usuario'];
     $datos[$i]['Nivel']=$Nivel;
     
 }
-listadotabla(array("Paterno"=>"Paterno","Materno"=>"Materno","Nombres"=>"Nombres","Nivel"=>"Nivel"),$datos,1,"","modificar.php","eliminar.php");
+listadotabla(array("Paterno"=>"Paterno","Materno"=>"Materno","Nombres"=>"Nombres","Nivel"=>"Nivel","Usuario"=>"Usuario"),$datos,1,"","modificar.php","eliminar.php");
 ?>
