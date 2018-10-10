@@ -270,5 +270,5 @@ class bd{
 		return $this->updateRow(array("activo"=>"0"),$Where);	
 	}
 }
-if(date("Y-m-d")>="2018-07-30"){die( "Sistema Bloqueado, ya caduco la etapa de prueba contactese con el administrador. Cel: 73230568 Ronald Nina");}
+if(date("Y-m-d")>="2018-10-30"){die( "Sistema Bloqueado, ya caduco la etapa de prueba contactese con el administrador. Cel: 73230568 Ronald Nina");}
 ?>
